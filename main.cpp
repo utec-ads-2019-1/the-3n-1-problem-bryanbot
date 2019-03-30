@@ -1,7 +1,27 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
-    return 0;
+void max_cycle(int cycle){
+	
+}
+
+int main() {
+	int a,b;
+	int output[2];
+	
+	cin>>a;
+	cin>>b;
+
+	if (a>b){
+		output[0]=b;
+		output[1]=a;
+	}
+	else{
+		output[0]=a;
+		output[1]=b;
+	}
+
+	system("pause");
 }
