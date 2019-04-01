@@ -1,27 +1,38 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 using namespace std;
 
-void max_cycle(int cycle){
-	
-}
-
 int main() {
-	int a,b;
-	int output[2];
-	
-	cin>>a;
-	cin>>b;
+	int high, low;
+	int swap;
 
-	if (a>b){
-		output[0]=b;
-		output[1]=a;
+	while (cin >> high >> low){
+		if ( low > high){
+			swap = high;
+			high = low;
+			low = swap;
+		}
+		int maxCycle = 0;
+		int low_print = low;
+		while (low <= high){
+			int count = 1;
+			unsigned int n = low;
+			while (n != 1){
+				count++;
+				if (n % 2 == 0){
+					n = n/2;
+				}
+				else {
+					n = 3*n + 1;
+				}
+			}
+			if (count >= maxCycle){
+				maxCycle = count;
+			}
+		low++;
 	}
-	else{
-		output[0]=a;
-		output[1]=b;
-	}
-
-	system("pause");
+	printf("%d %d %d\n", low_print, high, maxCycle);
+	}	
 }
