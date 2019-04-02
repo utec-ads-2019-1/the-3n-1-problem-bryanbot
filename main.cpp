@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <stdio.h>
 #include <algorithm>
 
@@ -8,19 +7,23 @@ using namespace std;
 int main() {
 	int high, low;
 	while ((scanf("%d %d", &high, &low))==2){
+		int print_high = high;
+		int print_low = low;
 		if ( low > high){
 			std::swap(high, low);
 		}
 		int maxCycle = 0;
+		int cycleLength;
 		for (int i = low; i <= high; i++){
-			int count = 1;
-			unsigned int n = i;
+			cycleLength = 1;
+			unsigned long int n = i;
 			while (n != 1){
-				count++;
+				cycleLength++;
 				n = (n % 2 == 0)? n / 2 : 3 * n + 1;
 			}
-			maxCycle = (count >= maxCycle)? count:maxCycle;
+			maxCycle = (cycleLength > maxCycle)? cycleLength:maxCycle;
 	}
-	printf("%d %d %d\n", low, high, maxCycle);
+	printf("%d %d %d\n", print_high, print_low, maxCycle);
 	}
+	return 0;
 }
