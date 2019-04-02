@@ -12,20 +12,17 @@ int main() {
 			std::swap(high, low);
 		}
 		int maxCycle = 0;
-		int low_print = low;
-		while (low <= high){
+		for (int i = low; i <= high; i++){
 			int count = 1;
-			unsigned int n = low;
+			int n = i;
 			while (n != 1){
 				count++;
-				n = (n % 2 == 0)? n = n /2 : n = 3 * n+1;
+				n = (n % 2 == 0)? n / 2 : 3 * n + 1;
 			}
 			if (count >= maxCycle){
 				maxCycle = count;
 			}
-		low++;
 	}
-	printf("%d %d %d\n", low_print, high, maxCycle);
+	printf("%d %d %d\n", low, high, maxCycle);
 	}
-	return 0;
 }
