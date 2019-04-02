@@ -7,8 +7,6 @@ using namespace std;
 
 int main() {
 	int high, low;
-	int swap;
-
 	while ((scanf("%d %d", &high, &low))==2){
 		if ( low > high){
 			std::swap(high, low);
